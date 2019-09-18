@@ -4,7 +4,7 @@
   "description": "gitpage",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev docs",
+    "serve": "vuepress dev docs",
     "build": "vuepress build docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +19,11 @@
   },
   "homepage": "https://github.com/d1313113/d1313113.github.io#readme",
   "devDependencies": {
+    "element-ui": "^2.12.0",
+    "gitalk": "^1.5.0",
     "vuepress": "^1.0.3"
+  },
+  "dependencies": {
+    "vuepress-plugin-cat": "^1.0.3"
   }
 }
