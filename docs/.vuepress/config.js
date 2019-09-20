@@ -1,8 +1,7 @@
 module.exports = {
-  title: 'Hello githubPage',
-  description: 'jjjj',
+  title: 'Cumelmell',
+  description: 'Cumelmell gitpage',
   repo: 'https://github.com/d1313113/d1313113.github.io',
-  // dest: './dist',
   configureWebpack: {
     resolve: {
       alias: {
@@ -28,10 +27,17 @@ module.exports = {
     },
     sidebar: [
       {
-        title: 'algorithm',
+        title: 'Algorithm',
         collapsable: true,
         children: [
           ['/algorithm/', '算法']
+        ]
+      },
+      {
+        title: 'DataBase',
+        collapsable: true,
+        children: [
+          ['/database/mongodb', 'MongoDB']
         ]
       },
       {
