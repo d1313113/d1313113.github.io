@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MongoDB安装 | Cumelmell blog</title>
+    <meta name="description" content="Welcome to my blog">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.53c4419a.css" as="style"><link rel="preload" href="/assets/js/app.7e7c3ba7.js" as="script"><link rel="preload" href="/assets/js/6.28cd61b4.js" as="script"><link rel="preload" href="/assets/js/14.89a1d83f.js" as="script"><link rel="prefetch" href="/assets/js/1.d62291ca.js"><link rel="prefetch" href="/assets/js/10.1afe21bf.js"><link rel="prefetch" href="/assets/js/11.493c1843.js"><link rel="prefetch" href="/assets/js/12.17ec2415.js"><link rel="prefetch" href="/assets/js/13.e6e32837.js"><link rel="prefetch" href="/assets/js/15.2ffef5da.js"><link rel="prefetch" href="/assets/js/3.8887c0f5.js"><link rel="prefetch" href="/assets/js/4.4dc5dcc2.js"><link rel="prefetch" href="/assets/js/5.c5391459.js"><link rel="prefetch" href="/assets/js/7.db558288.js"><link rel="prefetch" href="/assets/js/8.3086d95b.js"><link rel="prefetch" href="/assets/js/9.c3dc11df.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.53c4419a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-70993766><div data-v-740e207b data-v-70993766><nav class="navbar" data-v-740e207b><div class="container" data-v-740e207b><a href="/" class="router-link-active" data-v-740e207b><span class="navbar-site-name" data-v-740e207b>
+          Cumelmell blog
+        </span></a> <div class="navbar-toggler" data-v-740e207b><svg class="icon" style="font-size:1.2em;" data-v-740e207b data-v-740e207b><title data-v-740e207b data-v-740e207b>menu</title><use xlink:href="#icon-menu" data-v-740e207b data-v-740e207b></use></svg></div> <div class="navbar-links" data-v-740e207b><a href="/" class="navbar-link" data-v-740e207b>
+            首页
+          </a><a href="/posts/" class="navbar-link router-link-active" data-v-740e207b>
+            文章
+          </a><a href="https://github.com/d1313113/d1313113.github.io" target="_blank" rel="noopener noreferrer" class="navbar-link" data-v-740e207b>
+            github
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-740e207b></div></div> <div class="banner" data-v-98d6aa8c data-v-70993766 data-v-70993766><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-70993766>
+          MongoDB安装
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-6e91a59a data-v-6e91a59a><main class="main" data-v-6e91a59a><div class="post" data-v-6e91a59a data-v-6e91a59a><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-09-21
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2019-09-21
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/posts/2019/09/19/algorithm.html" class="post-link" data-v-4e23451f>
+      上一篇 : 算法介绍!
+    </a> <!----></section></section> <article class="main-div"><div class="post-content content content__default"><h1 id="安装mongdb"><a href="#安装mongdb" aria-hidden="true" class="header-anchor">#</a> 安装MongDB</h1> <p><a href="https://treehouse.github.io/installation-guides/mac/mongo-mac.html" target="_blank" rel="noopener noreferrer">安装步骤参考地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>brew update
+# 貌似不存在这个包,要用cask安装
+brew install mongodb
+brew cask install mongodb
+
+# 太慢了,手动下载压缩包安装
+# 创建mongdb数据默认存储文件夹
+mkdir -p /data/db
+# 修改数据仓库文件夹权限
+sudo chown -R `id -un` /data/db
+# 开启守护进程,再次输入打开实例
+mongod
+# 关闭实例
+quit()
+# 关闭守护进程
+ctrl-c
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h2 id="手动安装"><a href="#手动安装" aria-hidden="true" class="header-anchor">#</a> 手动安装</h2> <ol><li><p>在Users/cumelmell下新建MongoDB文件夹，把从官网上下的文件，型如：mongodb-osx-x86_64-2.6.1这个解压到MongoDB文件夹</p></li> <li><p>在MongoDB目录下新建data文件夹</p></li> <li><p>在data下新建db文件夹（存放数据）</p></li> <li><p>sudo chown －R  /Users/cumelmell /MongoDB/data  设置权限</p></li> <li><p>进入到bin目录，使用./mongod --dbpath /Users/cumelmell/MongoDB/data/db 设置db文件夹的路径</p></li> <li><p>如果看到waiting for connections on port 27017</p></li> <li><p>可以打开浏览器输入：localhost:27017,如果看到It looks like you are trying to access MongoDB over HTTP on the native driver port 说明连接成功了。</p></li> <li><p>点击终端 Commond+N 打开一个新的终端 cd 到bin目录 ./mongo 便可连接到数据库进行操作</p></li></ol> <h2 id="配置环境变量"><a href="#配置环境变量" aria-hidden="true" class="header-anchor">#</a> 配置环境变量</h2> <p>在基于unix/linux的操作系统下进行程序开发，使用环境变量将会方便。通过设置环境变量将可以在任意目录通过输入程序名来执行设定目录下的程序。不需要通过cd将工作目录改变到程序目录再执行程序。而且免去了输入&quot;./&quot;的麻烦。</p> <p>具体步骤如下：</p> <ol><li><p>打开 应用程序 -&gt; 实用工具 -&gt; 终端；</p></li> <li><p>在终端中定位到自己用户的主目录，输入： cd ~ ；</p></li> <li><p>创建一个空文件，输入：touch .bash_profile ；</p></li> <li><p>编辑这个文件，输入：open .bash_profile ；</p></li> <li><p>在这个文件中输入：export PATH=${PATH}:&lt;文件目录&gt; ；（将&quot;&lt;文件目录&gt;&quot;替换成自己想要的目录）</p></li></ol> <p>例如：export PATH=${PATH}:/Users/cumelmell/MongoDB/mongodb-osx-x86_64-2.6.1/bin;</p> <ol start="6"><li><p>如果需要添加其他的环境变量例如JAVA_HOME，可以输入：export JAVA_HOME=/Library/Java/Home ；</p></li> <li><p>source .bash_profile重启终端，测试,这个时候就可以在用户主目录使用：mongod --dbpath /Users/cumelmell/MongoDB/data/db 来启动数据库了，点击终端Commond+N打开一个新的终端，使用mongo命令来连接数据库，对数据库进行操作,比如：show dbs 显示所有的集合</p></li></ol> <h2 id="添加配置文件"><a href="#添加配置文件" aria-hidden="true" class="header-anchor">#</a> 添加配置文件</h2> <p>在MongDB下新增log文件夹及etc文件夹,在etc中新增mongo.conf</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#数据库路径
+dbpath=/Users/cumelmell/MongoDB/data/db
+
+#日志输出文件路径
+logpath=/Users/cumelmell/MongoDB/log/mongo.log
+
+#错误日志采用追加模式，配置这个选项后mongodb的日志会追加到现有的日志文件，而不是从新创建一个新文件
+logappend=true
+
+#启用日志文件，默认启用
+journal=true
+
+#这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false
+quiet=false
+
+#是否后台启动，有这个参数，就可以实现后台运行
+fork=true
+
+#端口号 默认为27017
+port=27017
+
+#指定存储引擎（默认不需要指定）
+#storageEngine=mmapv1
+
+#开启网页日志监控，有这个参数就可以在浏览器上用28017查看监控界面
+httpinterface=true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h2 id="开启-关闭进程"><a href="#开启-关闭进程" aria-hidden="true" class="header-anchor">#</a> 开启/关闭进程</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code># -f 表示--config
+mongod -f /Users/cumelmell/MongoDB/etc/mongo.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>ps -ef|grep mongo
+kill 进程
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-09-21
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2019-09-21
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/posts/2019/09/19/algorithm.html" class="post-link" data-v-4e23451f>
+      上一篇 : 算法介绍!
+    </a> <!----></section></section> <!----></div></main> <aside class="aside" data-v-6e91a59a><div class="info-card main-div" data-v-03c72fc4 data-v-6e91a59a><div class="info-card-header" data-v-03c72fc4><img src="/images/common/avatar.jpg" alt="Cumelmell" class="info-avatar" data-v-03c72fc4></div> <div class="info-card-body" data-v-03c72fc4><section class="info-nickname" data-v-03c72fc4>
+      Cumelmell
+    </section> <section class="info-desc" data-v-03c72fc4>Just Enjoy Coding</section> <section class="info-contact" data-v-03c72fc4><section data-v-03c72fc4><span title="China" data-v-03c72fc4 data-v-03c72fc4><svg class="icon" style="font-size:1em;" data-v-03c72fc4 data-v-03c72fc4><title data-v-03c72fc4 data-v-03c72fc4>China</title><use xlink:href="#icon-location" data-v-03c72fc4 data-v-03c72fc4></use></svg><span class="info-text" data-v-03c72fc4 data-v-03c72fc4>
+          China
+        </span></span></section> <!----> <section data-v-03c72fc4><a href="mailto:cumelmell@foxmail.com" title="cumelmell@foxmail.com" data-v-03c72fc4 data-v-03c72fc4><svg class="icon" style="font-size:1em;" data-v-03c72fc4 data-v-03c72fc4><title data-v-03c72fc4 data-v-03c72fc4>cumelmell@foxmail.com</title><use xlink:href="#icon-email" data-v-03c72fc4 data-v-03c72fc4></use></svg><span class="info-text" data-v-03c72fc4 data-v-03c72fc4>
+          cumelmell@foxmail.com
+        </span></a></section></section></div> <!----></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-6e91a59a><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span></span> <div class="post-nav-toc"><ul><li><a href="/posts/2019/09/21/mongodb.html#手动安装">手动安装</a></li><li><a href="/posts/2019/09/21/mongodb.html#配置环境变量">配置环境变量</a></li><li><a href="/posts/2019/09/21/mongodb.html#添加配置文件">添加配置文件</a></li><li><a href="/posts/2019/09/21/mongodb.html#开启-关闭进程">开启/关闭进程</a></li></ul></div></div> <!----></div></aside></div> <footer class="footer" data-v-063f2ab8><!----> <!----> <p class="footer-text" data-v-063f2ab8>Copyright 2019-present <a href="https://github.com/d1313113" target="_blank">Cumelmell</a> | MIT License</p></footer></div><div class="global-ui"><!----><!----><div class="cat-container" data-v-a13867c0><canvas id="vuepress-cat" width="280" height="250" class="live2d" data-v-a13867c0></canvas></div></div></div>
+    <script src="/assets/js/app.7e7c3ba7.js" defer></script><script src="/assets/js/6.28cd61b4.js" defer></script><script src="/assets/js/14.89a1d83f.js" defer></script>
+  </body>
+</html>
