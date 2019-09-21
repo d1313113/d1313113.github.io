@@ -1,3 +1,15 @@
+---
+# 草稿
+draft: false
+category: algorithm
+tags:
+  - Introduction
+date: 2019-09-19
+title: 算法介绍!
+# 固定标题
+vssue-title: 算法介绍!
+---
+
 # 什么是算法
 算法一般是解决某一类方法的具体实现方法,可以是具体或者抽象的实现方法,亦可以是解决思想.
 

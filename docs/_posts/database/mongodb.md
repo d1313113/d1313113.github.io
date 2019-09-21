@@ -1,3 +1,15 @@
+---
+# 草稿
+draft: false
+category: database
+tags:
+  - Introduction
+date: 2019-09-21
+title: MongoDB安装
+# 固定标题
+vssue-title: MongoDB安装!
+---
+
 # 安装MongDB
 [安装步骤参考地址](https://treehouse.github.io/installation-guides/mac/mongo-mac.html)
 
