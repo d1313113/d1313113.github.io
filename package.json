@@ -54,24 +54,5 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "standard",
-      "plugin:vue/recommended"
-    ],
-    "root": true,
-    "rules": {
-      "dot-notation": [
-        "error",
-        {
-          "allowPattern": "^$"
-        }
-      ],
-      "comma-dangle": [
-        "error",
-        "always-multiline"
-      ]
-    }
   }
 }
