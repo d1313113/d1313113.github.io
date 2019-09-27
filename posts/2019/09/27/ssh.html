@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>配置git SSH | Cumelmell blog</title>
+    <meta name="description" content="Welcome to my blog">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.53c4419a.css" as="style"><link rel="preload" href="/assets/js/app.57372712.js" as="script"><link rel="preload" href="/assets/js/6.ff93f36c.js" as="script"><link rel="preload" href="/assets/js/7.f6deaaaa.js" as="script"><link rel="prefetch" href="/assets/js/1.d62291ca.js"><link rel="prefetch" href="/assets/js/10.10054a80.js"><link rel="prefetch" href="/assets/js/11.3ba74399.js"><link rel="prefetch" href="/assets/js/12.232a7c33.js"><link rel="prefetch" href="/assets/js/13.759a0cfe.js"><link rel="prefetch" href="/assets/js/14.f4d8d0ba.js"><link rel="prefetch" href="/assets/js/15.25bc56af.js"><link rel="prefetch" href="/assets/js/16.86684cfa.js"><link rel="prefetch" href="/assets/js/17.8b1537c3.js"><link rel="prefetch" href="/assets/js/3.58c89592.js"><link rel="prefetch" href="/assets/js/4.e216b6ff.js"><link rel="prefetch" href="/assets/js/5.b1fe15b2.js"><link rel="prefetch" href="/assets/js/8.7770c3d3.js"><link rel="prefetch" href="/assets/js/9.4f71794c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.53c4419a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-70993766><div data-v-740e207b data-v-70993766><nav class="navbar" data-v-740e207b><div class="container" data-v-740e207b><a href="/" class="router-link-active" data-v-740e207b><span class="navbar-site-name" data-v-740e207b>
+          Cumelmell blog
+        </span></a> <div class="navbar-toggler" data-v-740e207b><svg class="icon" style="font-size:1.2em;" data-v-740e207b data-v-740e207b><title data-v-740e207b data-v-740e207b>menu</title><use xlink:href="#icon-menu" data-v-740e207b data-v-740e207b></use></svg></div> <div class="navbar-links" data-v-740e207b><a href="/" class="navbar-link" data-v-740e207b>
+            首页
+          </a><a href="/posts/" class="navbar-link router-link-active" data-v-740e207b>
+            文章
+          </a><a href="https://github.com/d1313113/d1313113.github.io" target="_blank" rel="noopener noreferrer" class="navbar-link" data-v-740e207b>
+            github
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-740e207b></div></div> <div class="banner" data-v-98d6aa8c data-v-70993766 data-v-70993766><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-70993766>
+          配置git SSH
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-6e91a59a data-v-6e91a59a><main class="main" data-v-6e91a59a><div class="post" data-v-6e91a59a data-v-6e91a59a><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-09-27
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2019-09-27
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/posts/2019/09/22/currying.html" class="post-link" data-v-4e23451f>
+      上一篇 : 01.js技巧 -- 函数柯里化
+    </a> <!----></section></section> <article class="main-div"><div class="post-content content content__default"><h1 id="使用ssh操作git仓库"><a href="#使用ssh操作git仓库" aria-hidden="true" class="header-anchor">#</a> 使用ssh操作git仓库</h1> <h2 id="为什么使用ssh方式"><a href="#为什么使用ssh方式" aria-hidden="true" class="header-anchor">#</a> 为什么使用ssh方式</h2> <p>git仓库一般提供两种方式</p> <ol><li>ssh</li> <li>https
+而https形式,没有设置全局store账户密码时,需要多次输入账号密码,使用ssh方式,减少了记忆账号密码,以及输入过程,会更便捷.</li></ol> <h2 id="生成-添加ssh公钥"><a href="#生成-添加ssh公钥" aria-hidden="true" class="header-anchor">#</a> 生成/添加SSH公钥</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>ssh-keygen -t rsa -C <span class="token string">&quot;xxxx@xxx.com&quot;</span>
+<span class="token comment"># 生成 一堆 rsa 公钥/私钥</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>按照提示完成三个回车,即可生成<code>ssh key</code>.通过查看<code>~/.ssh/id_rsa.pub</code>文件内容,获取到<code>public key</code></p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">cat</span> ~/.ssh/id_ras.pub
+<span class="token comment"># ssh-ras xxxx</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><img src="/assets/img/generate_rsa.146c091f.png" alt="generate ssh"></p> <h2 id="添加ssh公钥到git中"><a href="#添加ssh公钥到git中" aria-hidden="true" class="header-anchor">#</a> 添加ssh公钥到git中</h2> <p>在<code>settings</code>中将获取到的公钥贴站上即可</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">ssh</span> -T git@github.com
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>首次使用需要确认并添加主机到本机SSH可信列表,若返回</p> <p><code>Hi xxx, You've successfully authenticated ...</code></p> <p>内容则证明添加完成</p> <p><img src="/assets/img/test_ssh1.ccf2f933.png" alt="test ssh"></p> <p>添加成功后就可以使用SSH协议对仓库进行操作了</p> <h2 id="git配置多个ssh-key"><a href="#git配置多个ssh-key" aria-hidden="true" class="header-anchor">#</a> git配置多个SSH-key</h2> <h3 id="背景"><a href="#背景" aria-hidden="true" class="header-anchor">#</a> 背景</h3> <p>当拥有多个git账号时候,比如</p> <ul><li>公司内部开发工作,gitlab</li> <li>自己的一些开发活动,github</li></ul> <h3 id="解决办法"><a href="#解决办法" aria-hidden="true" class="header-anchor">#</a> 解决办法</h3> <p>生成多个ssh-key</p> <ol><li>生成一个公司使用的ssh-key</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>ssh-keygen -t rsa -C <span class="token string">'xxxx@company.com'</span> -f ~/.ssh/gitlab_id_rsa
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="2"><li>生成一个github专用的ssh-key</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>ssh-keygen -t ras -C <span class="token string">'xxxx@github.com'</span> -f ~/.ssh/github_id_rsa
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="3"><li>在<code>~/.ssh</code>目录下新建一个config配置文件,添加如下内容(其中Host与HostName填写git服务器的域名,Identity指定私钥的路径)</li></ol> <div class="language-conf line-numbers-mode"><pre class="language-text"><code># company
+Host xxx.com
+HostName xxx.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/gitlab_id_rsa
+
+# github
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/github_id_rsa
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><ol start="4"><li>使用ssh命令分别进行测试</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">ssh</span> -T git@xxx.com
+<span class="token function">ssh</span> -T git@github.com
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>如果成功的话,返回如下内容.
+<img src="/assets/img/test_ssh2.808213d6.png" alt="test ssh"></p> <p>到此,使用ssh配置git就完成了,在操作git仓库时,需要将remote地址设置成使用ssh协议.可节省去输入账号密码的步骤.</p></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-09-27
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2019-09-27
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/posts/2019/09/22/currying.html" class="post-link" data-v-4e23451f>
+      上一篇 : 01.js技巧 -- 函数柯里化
+    </a> <!----></section></section> <!----></div></main> <aside class="aside" data-v-6e91a59a><div class="info-card main-div" data-v-03c72fc4 data-v-6e91a59a><div class="info-card-header" data-v-03c72fc4><img src="/images/common/avatar.jpg" alt="Cumelmell" class="info-avatar" data-v-03c72fc4></div> <div class="info-card-body" data-v-03c72fc4><section class="info-nickname" data-v-03c72fc4>
+      Cumelmell
+    </section> <section class="info-desc" data-v-03c72fc4>Just Enjoy Coding</section> <section class="info-contact" data-v-03c72fc4><section data-v-03c72fc4><span title="China" data-v-03c72fc4 data-v-03c72fc4><svg class="icon" style="font-size:1em;" data-v-03c72fc4 data-v-03c72fc4><title data-v-03c72fc4 data-v-03c72fc4>China</title><use xlink:href="#icon-location" data-v-03c72fc4 data-v-03c72fc4></use></svg><span class="info-text" data-v-03c72fc4 data-v-03c72fc4>
+          China
+        </span></span></section> <!----> <section data-v-03c72fc4><a href="mailto:cumelmell@foxmail.com" title="cumelmell@foxmail.com" data-v-03c72fc4 data-v-03c72fc4><svg class="icon" style="font-size:1em;" data-v-03c72fc4 data-v-03c72fc4><title data-v-03c72fc4 data-v-03c72fc4>cumelmell@foxmail.com</title><use xlink:href="#icon-email" data-v-03c72fc4 data-v-03c72fc4></use></svg><span class="info-text" data-v-03c72fc4 data-v-03c72fc4>
+          cumelmell@foxmail.com
+        </span></a></section></section></div> <!----></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-6e91a59a><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span></span> <div class="post-nav-toc"><ul><li><a href="/posts/2019/09/27/ssh.html#为什么使用ssh方式">为什么使用ssh方式</a></li><li><a href="/posts/2019/09/27/ssh.html#生成-添加ssh公钥">生成/添加SSH公钥</a></li><li><a href="/posts/2019/09/27/ssh.html#添加ssh公钥到git中">添加ssh公钥到git中</a></li><li><a href="/posts/2019/09/27/ssh.html#git配置多个ssh-key">git配置多个SSH-key</a><ul><li><a href="/posts/2019/09/27/ssh.html#背景">背景</a></li><li><a href="/posts/2019/09/27/ssh.html#解决办法">解决办法</a></li></ul></li></ul></div></div> <!----></div></aside></div> <footer class="footer" data-v-063f2ab8><!----> <!----> <p class="footer-text" data-v-063f2ab8>Copyright 2019-present <a href="https://github.com/d1313113" target="_blank">Cumelmell</a> | MIT License</p></footer></div><div class="global-ui"><!----><!----><div class="cat-container" data-v-a13867c0><canvas id="vuepress-cat" width="280" height="250" class="live2d" data-v-a13867c0></canvas></div></div></div>
+    <script src="/assets/js/app.57372712.js" defer></script><script src="/assets/js/6.ff93f36c.js" defer></script><script src="/assets/js/7.f6deaaaa.js" defer></script>
+  </body>
+</html>
