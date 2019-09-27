@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>记一次更新nodejs | Cumelmell blog</title>
+    <meta name="description" content="Welcome to my blog">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.53c4419a.css" as="style"><link rel="preload" href="/assets/js/app.46c7e982.js" as="script"><link rel="preload" href="/assets/js/6.8e0520a6.js" as="script"><link rel="preload" href="/assets/js/9.9510e79b.js" as="script"><link rel="prefetch" href="/assets/js/1.d62291ca.js"><link rel="prefetch" href="/assets/js/10.608e749d.js"><link rel="prefetch" href="/assets/js/11.c9e37d59.js"><link rel="prefetch" href="/assets/js/12.4495c159.js"><link rel="prefetch" href="/assets/js/13.8bfc103c.js"><link rel="prefetch" href="/assets/js/14.d64b7a50.js"><link rel="prefetch" href="/assets/js/15.fd60aeb9.js"><link rel="prefetch" href="/assets/js/16.c5787678.js"><link rel="prefetch" href="/assets/js/17.7cfcc58b.js"><link rel="prefetch" href="/assets/js/18.333c04a1.js"><link rel="prefetch" href="/assets/js/3.6f1aba52.js"><link rel="prefetch" href="/assets/js/4.69498ee3.js"><link rel="prefetch" href="/assets/js/5.18832ab5.js"><link rel="prefetch" href="/assets/js/7.39adfb29.js"><link rel="prefetch" href="/assets/js/8.6a85577f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.53c4419a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-70993766><div data-v-740e207b data-v-70993766><nav class="navbar" data-v-740e207b><div class="container" data-v-740e207b><a href="/" class="router-link-active" data-v-740e207b><span class="navbar-site-name" data-v-740e207b>
+          Cumelmell blog
+        </span></a> <div class="navbar-toggler" data-v-740e207b><svg class="icon" style="font-size:1.2em;" data-v-740e207b data-v-740e207b><title data-v-740e207b data-v-740e207b>menu</title><use xlink:href="#icon-menu" data-v-740e207b data-v-740e207b></use></svg></div> <div class="navbar-links" data-v-740e207b><a href="/" class="navbar-link" data-v-740e207b>
+            首页
+          </a><a href="/posts/" class="navbar-link router-link-active" data-v-740e207b>
+            文章
+          </a><a href="https://github.com/d1313113/d1313113.github.io" target="_blank" rel="noopener noreferrer" class="navbar-link" data-v-740e207b>
+            github
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-740e207b></div></div> <div class="banner" data-v-98d6aa8c data-v-70993766 data-v-70993766><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-70993766>
+          记一次更新nodejs
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-6e91a59a data-v-6e91a59a><main class="main" data-v-6e91a59a><div class="post" data-v-6e91a59a data-v-6e91a59a><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-09-27
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2019-09-27
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/posts/2019/09/27/ssh.html" class="post-link" data-v-4e23451f>
+      上一篇 : 配置git SSH
+    </a> <!----></section></section> <article class="main-div"><div class="post-content content content__default"><h1 id="记录一次更新nodejs遇到的问题"><a href="#记录一次更新nodejs遇到的问题" aria-hidden="true" class="header-anchor">#</a> 记录一次更新nodejs遇到的问题</h1> <h2 id="背景"><a href="#背景" aria-hidden="true" class="header-anchor">#</a> 背景</h2> <p>之前电脑中的nodejs是通过在nodejs官网下载安装包安装的,在后续想更新时使用brew更新,导致双版本存在.</p> <p>希望将原有版本去除,同时处理好环境变量.</p> <h2 id="安装nodejs"><a href="#安装nodejs" aria-hidden="true" class="header-anchor">#</a> 安装nodejs</h2> <p>因已经存在了nodejs,又使用了brew更新</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>brew upgrade node
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>安装完毕,查看版本时</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>node -v
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>10.x.x 发现依旧是旧版的,不是新版12.x.x</p> <h3 id="处理问题"><a href="#处理问题" aria-hidden="true" class="header-anchor">#</a> 处理问题</h3> <ol><li>首先先删除当前node</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>brew uninstall node
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="2"><li>查看node和npm是否还存在,发现依旧存在</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>where node
+<span class="token comment"># node not found</span>
+where <span class="token function">npm</span>
+<span class="token comment"># 连续输出两条</span>
+<span class="token comment"># /usr/local/bin/npm</span>
+<span class="token comment"># /usr/local/bin/npm</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ol start="3"><li>强制删除npm后,重装node</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>where <span class="token function">npm</span>
+<span class="token function">sudo</span> <span class="token function">rm</span> -rf /usr/local/bin/npm
+brew <span class="token function">install</span> node
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>此时安装node报错,提示<code>brew link</code>失败
+<img src="/assets/img/nodejs_error.588cc359.png" alt="error">
+4. 验证node</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>node -v
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><code>command not found: node</code>,此时发现node并没有写入环境变量中,但已安装成功</p> <ol start="5"><li>处理残留ls软连接</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>brew <span class="token function">link</span> --overwrite --dry-run node
+brew unintsll node
+brew <span class="token function">install</span> node
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ol start="6"><li>验证</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>node -v
+<span class="token comment"># v12.12.0</span>
+<span class="token function">npm</span> -v
+<span class="token comment"># 6.11.3</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>能正确的输出版本号,此次问题解决.</p></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-09-27
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2019-09-27
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/posts/2019/09/27/ssh.html" class="post-link" data-v-4e23451f>
+      上一篇 : 配置git SSH
+    </a> <!----></section></section> <!----></div></main> <aside class="aside" data-v-6e91a59a><div class="info-card main-div" data-v-03c72fc4 data-v-6e91a59a><div class="info-card-header" data-v-03c72fc4><img src="/images/common/avatar.jpg" alt="Cumelmell" class="info-avatar" data-v-03c72fc4></div> <div class="info-card-body" data-v-03c72fc4><section class="info-nickname" data-v-03c72fc4>
+      Cumelmell
+    </section> <section class="info-desc" data-v-03c72fc4>Just Enjoy Coding</section> <section class="info-contact" data-v-03c72fc4><section data-v-03c72fc4><span title="China" data-v-03c72fc4 data-v-03c72fc4><svg class="icon" style="font-size:1em;" data-v-03c72fc4 data-v-03c72fc4><title data-v-03c72fc4 data-v-03c72fc4>China</title><use xlink:href="#icon-location" data-v-03c72fc4 data-v-03c72fc4></use></svg><span class="info-text" data-v-03c72fc4 data-v-03c72fc4>
+          China
+        </span></span></section> <!----> <section data-v-03c72fc4><a href="mailto:cumelmell@foxmail.com" title="cumelmell@foxmail.com" data-v-03c72fc4 data-v-03c72fc4><svg class="icon" style="font-size:1em;" data-v-03c72fc4 data-v-03c72fc4><title data-v-03c72fc4 data-v-03c72fc4>cumelmell@foxmail.com</title><use xlink:href="#icon-email" data-v-03c72fc4 data-v-03c72fc4></use></svg><span class="info-text" data-v-03c72fc4 data-v-03c72fc4>
+          cumelmell@foxmail.com
+        </span></a></section></section></div> <!----></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-6e91a59a><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span></span> <div class="post-nav-toc"><ul><li><a href="/posts/2019/09/27/nodejs.html#背景">背景</a></li><li><a href="/posts/2019/09/27/nodejs.html#安装nodejs">安装nodejs</a><ul><li><a href="/posts/2019/09/27/nodejs.html#处理问题">处理问题</a></li></ul></li></ul></div></div> <!----></div></aside></div> <footer class="footer" data-v-063f2ab8><!----> <!----> <p class="footer-text" data-v-063f2ab8>Copyright 2019-present <a href="https://github.com/d1313113" target="_blank">Cumelmell</a> | MIT License</p></footer></div><div class="global-ui"><!----><!----><div class="cat-container" data-v-a13867c0><canvas id="vuepress-cat" width="280" height="250" class="live2d" data-v-a13867c0></canvas></div></div></div>
+    <script src="/assets/js/app.46c7e982.js" defer></script><script src="/assets/js/6.8e0520a6.js" defer></script><script src="/assets/js/9.9510e79b.js" defer></script>
+  </body>
+</html>
