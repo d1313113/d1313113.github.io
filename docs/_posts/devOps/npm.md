@@ -6,7 +6,7 @@ tags:
 date: 2019-10-09
 title: npm publish 失败
 # 固定标题
-vssue-title: npm publish 是吧
+vssue-title: npm publish 失败
 ---
 ## 使用npm publish失败
 今天使用npm发布包失败,并提示
