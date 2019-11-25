@@ -80,16 +80,24 @@ mkdir /cumelmell/nginx/html -p
 ```
 2. 运行容器
 
-1. 挂载日志目录
-2. 挂载配置目录
-3. 直接将配置文件挂载出来,不推荐
-4. 挂载项目目录
+
+   1. 挂载日志目录
+   2. 挂载配置目录
+   3. 直接将配置文件挂载出来,不推荐
+   4. 挂载项目目录
 ```bash
 docker run --name my-nginx -d -p 8888:80\
   -v /cumelmell/nginx/log:/var/log/nginx\
   -v /cumelmell/nginx/conf:/etc/nginx/conf.d\
   -v /cumelmell/nginx/nginx.conf:/etc/nginx/nginx/conf\
-  -v /cumelmell/nginx/html:/usr/share/nginx/html
+  -v /cumelmell/nginx/html:/usr/share/nginx/html\
+  nginx
+
+docker run --name my-nginx -d -p 80:80\
+ -v /cumelmell/nginx/conf:/etc/nginx/conf.d\
+ -v /cumelmell/nginx/log:/var/log/nginx\
+ -v /cumelmell/nginx/html:/usr/share/nginx/html\
+ nginx
 ```
 ![nginx-config](~@img/devOps/2019-11-18-docker03.png)
 
