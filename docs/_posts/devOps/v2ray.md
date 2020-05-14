@@ -57,7 +57,9 @@ vssue-title: 谷歌云配置 v2ray
       ![vm](~@img/devOps/google-could/2020-05-13-v2ray04.png)
     - 地区: 选择刚上面配置静态IP的区域,对应好
     - 网络: 管理、磁盘、网络、SSH 密钥 -> 网络 -> 外部IP
-      - 选择之前设置好的` 静态IP `
+
+      选择之前设置好的` 静态IP `
+
       ![ip setting2](~@img/devOps/google-could/2020-05-13-v2ray05.png)
 
 ## ssh 到 VM 实例
@@ -228,6 +230,7 @@ vssue-title: 谷歌云配置 v2ray
   lsmod | grep bbr
   ```
   出现下述的文字就是成功了
+
   ![BBR](~@img/devOps/google-could/2020-05-13-v2ray08.png)
 
 
