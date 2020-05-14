@@ -95,6 +95,7 @@ module.exports = {
         message: '内容有更新',
         buttonText: '刷新'
       }
-    }
+    },
+    smoothScroll: true
   }
 };
