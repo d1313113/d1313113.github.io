@@ -21,7 +21,7 @@ vssue-title: idea maven无法下载依赖
 </mirror>
 ```
 以上并不能解决问题,同时在`idea`配置更新仓库显示`error`.
-![error](~@img/java/2020-12-11-maven01.png)
+![error](~@img/java/maven/2020-12-11-maven01.png)
 在查阅资料后,发现**阿里不再支持http下载**,只支持`https`,因此需要把镜像配置修改如下
 ```xml
 <mirror>
@@ -35,5 +35,5 @@ vssue-title: idea maven无法下载依赖
 ```
 -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
 ```
-![maven options](~@img/java/2020-12-11-maven02.png)
+![maven options](~@img/java/maven/2020-12-11-maven02.png)
 自此,在`idea`中可正常下载依赖.
