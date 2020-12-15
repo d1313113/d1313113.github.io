@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>docker nginx hosts | Cumelmell blog</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <meta name="description" content="Welcome to my blog">
+    <link rel="preload" href="/assets/css/0.styles.754addc1.css" as="style"><link rel="preload" href="/assets/js/app.44c7fbf7.js" as="script"><link rel="preload" href="/assets/js/15.101a1bc0.js" as="script"><link rel="preload" href="/assets/js/31.124203a8.js" as="script"><link rel="prefetch" href="/assets/js/1.f812d5f4.js"><link rel="prefetch" href="/assets/js/10.33ada691.js"><link rel="prefetch" href="/assets/js/11.3c9cdaea.js"><link rel="prefetch" href="/assets/js/12.e97335a9.js"><link rel="prefetch" href="/assets/js/13.537a33cb.js"><link rel="prefetch" href="/assets/js/14.b46db719.js"><link rel="prefetch" href="/assets/js/16.c5bf15e8.js"><link rel="prefetch" href="/assets/js/17.80b2eedf.js"><link rel="prefetch" href="/assets/js/18.98331ec6.js"><link rel="prefetch" href="/assets/js/19.4338fb73.js"><link rel="prefetch" href="/assets/js/20.e31e4e9b.js"><link rel="prefetch" href="/assets/js/21.4d12d42f.js"><link rel="prefetch" href="/assets/js/22.dbdd97f6.js"><link rel="prefetch" href="/assets/js/23.7a7a5706.js"><link rel="prefetch" href="/assets/js/24.b11aba65.js"><link rel="prefetch" href="/assets/js/25.8a13419b.js"><link rel="prefetch" href="/assets/js/26.91334cbc.js"><link rel="prefetch" href="/assets/js/27.110950de.js"><link rel="prefetch" href="/assets/js/28.f5a0a717.js"><link rel="prefetch" href="/assets/js/29.0ff01926.js"><link rel="prefetch" href="/assets/js/3.40a1cb70.js"><link rel="prefetch" href="/assets/js/30.cb155480.js"><link rel="prefetch" href="/assets/js/32.9c37d9a4.js"><link rel="prefetch" href="/assets/js/33.d7cfdb28.js"><link rel="prefetch" href="/assets/js/34.abb30938.js"><link rel="prefetch" href="/assets/js/4.301d29d4.js"><link rel="prefetch" href="/assets/js/5.fc4d76b8.js"><link rel="prefetch" href="/assets/js/6.274a3c90.js"><link rel="prefetch" href="/assets/js/7.6d31a2a7.js"><link rel="prefetch" href="/assets/js/8.2a772fb1.js"><link rel="prefetch" href="/assets/js/9.850e087a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.754addc1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          Cumelmell blog
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/" class="navbar-link" data-v-e4145d0a>
+            首页
+          </a><a href="/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            文章
+          </a><a href="https://github.com/d1313113/d1313113.github.io" target="_blank" rel="noopener noreferrer" class="navbar-link" data-v-e4145d0a><span data-v-e4145d0a>github</span> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" data-v-e4145d0a data-v-e4145d0a><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          docker nginx hosts
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2020-12-15
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : Invalid Date
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/posts/2020/12/12/jaxb-api.html" class="post-link" data-v-4e23451f>
+      上一篇 : 微服务 registry 无法启动
+    </a> <!----></section></section> <article class="main-div"><div class="post-content content content__default"><p>在<code>docker</code>运行的<code>nginx</code>中,有需要访问宿主机的情况,<code>nginx</code>普通配置如下</p> <div class="language-properties line-numbers-mode"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br></div><pre class="language-properties"><code><span class="token attr-name">server</span> <span class="token attr-value">{</span>
+<span class="token attr-name">  listen</span> <span class="token attr-value">      80;</span>
+<span class="token attr-name">  server_name</span> <span class="token attr-value"> www.leyou.com;</span>
+<span class="token attr-name">  access_log</span> <span class="token attr-value">/app/docker-lnmp/nginx/logs/leyou/access.www.leyou.com.log combined;</span>
+<span class="token attr-name">  error_log</span> <span class="token attr-value">/app/docker-lnmp/nginx/logs/leyou/error.www.leyou.com.log;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-Host $host;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-Server $host;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+<span class="token comment">	#以item开头的请求都代理到8084端口</span>
+<span class="token attr-name">	location</span> <span class="token attr-value">/item {</span>
+<span class="token comment">    # 先找本地，本地有经过静态化处理的页面，默认在nginx目录下的html目录下</span>
+<span class="token attr-name">    root</span> <span class="token attr-value">html;</span>
+<span class="token attr-name">    if</span> <span class="token attr-value">(!-f $request_filename) { #请求的文件不存在，就反向代理</span>
+<span class="token attr-name">      proxy_pass</span> <span class="token attr-value">http://127.0.0.1:8084;</span>
+      break;
+    }
+  }
+<span class="token attr-name">  location</span> <span class="token attr-value">/ {</span>
+<span class="token attr-name">    proxy_pass</span> <span class="token attr-value">http://127.0.0.1:9002;</span>
+<span class="token attr-name">    proxy_connect_timeout</span> <span class="token attr-value">600;</span>
+<span class="token attr-name">    proxy_read_timeout</span> <span class="token attr-value">600;</span>
+  }
+}
+<span class="token attr-name">server</span> <span class="token attr-value">{</span>
+<span class="token attr-name">  listen</span> <span class="token attr-value">      80;  #监听的端口</span>
+<span class="token attr-name">  server_name</span> <span class="token attr-value"> 	manage.leyou.com;	#监听的域名</span>
+<span class="token attr-name">  access_log</span> <span class="token attr-value">/app/docker-lnmp/nginx/logs/leyou/access.manage.leyou.com.log combined;</span>
+<span class="token attr-name">  error_log</span> <span class="token attr-value">/app/docker-lnmp/nginx/logs/leyou/error.manage.leyou.com.log;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-Host $host;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-Server $host;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+<span class="token attr-name">  location</span> <span class="token attr-value">/ {</span>
+<span class="token attr-name">    proxy_pass</span> <span class="token attr-value">http://127.0.0.1:9001;</span>
+<span class="token attr-name">    proxy_connect_timeout</span> <span class="token attr-value">600;</span>
+<span class="token attr-name">    proxy_read_timeout</span> <span class="token attr-value">600;</span>
+<span class="token comment">    #root   html;</span>
+<span class="token comment">    #index  index.html index.htm;</span>
+  }
+<span class="token attr-name">  error_page</span> <span class="token attr-value">  500 502 503 504  /50x.html;</span>
+<span class="token attr-name">  location</span> <span class="token punctuation">=</span> <span class="token attr-value">/50x.html {</span>
+<span class="token attr-name">    root</span> <span class="token attr-value">  html;</span>
+  }
+}
+<span class="token comment">#网关代理，每一个以api.leyou.com域名的请求都会被代理到http://127.0.0.1:10010中去</span>
+<span class="token attr-name">server</span> <span class="token attr-value">{</span>
+<span class="token attr-name">  listen</span> <span class="token attr-value">      80;</span>
+<span class="token attr-name">  server_name</span> <span class="token attr-value"> api.leyou.com;</span>
+<span class="token attr-name">  access_log</span> <span class="token attr-value">/app/docker-lnmp/nginx/logs/leyou/access.api.leyou.com.log combined;</span>
+<span class="token attr-name">  error_log</span> <span class="token attr-value">/app/docker-lnmp/nginx/logs/leyou/error.api.leyou.com.log;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-Host $host;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-Server $host;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+<span class="token comment">  # 转发时携带请求的自身的host,而不是转发后的host: 127.0.0.1  ,主要是为了将cookie中的内容返回到请求浏览器</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">Host $host;</span>
+<span class="token comment">  # 上传路径的映射，将上传图片的请求不经过网关，将图片保存在其他服务器。以免造成不必要的网络开销</span>
+<span class="token attr-name">  location</span> <span class="token attr-value">/api/upload {</span>
+<span class="token attr-name">    proxy_pass</span> <span class="token attr-value">http://127.0.0.1:8082;</span>
+<span class="token attr-name">    proxy_connect_timeout</span> <span class="token attr-value">600;</span>
+<span class="token attr-name">    proxy_read_timeout</span> <span class="token attr-value">600;</span>
+<span class="token comment">    # nginx对代理的路径进行重写</span>
+<span class="token attr-name">    rewrite</span> <span class="token attr-value">&quot;^/api/(.*)$&quot; /$1 break;</span>
+  }
+<span class="token attr-name">  location</span> <span class="token attr-value">/ {</span>
+<span class="token attr-name">    proxy_pass</span> <span class="token attr-value">http://127.0.0.1:10010;</span>
+<span class="token attr-name">    proxy_connect_timeout</span> <span class="token attr-value">600;</span>
+<span class="token attr-name">    proxy_read_timeout</span> <span class="token attr-value">600;</span>
+  }
+}
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br></div></div><p>但以上配置中的<code>http://127.0.0.1</code>并不能访问宿主机,经查阅资料,提示使用<code>host.docker.internal</code>来访问宿主机.尝试过后并不行,发现是因为没有带协议,在<code>nginx</code>中应该配置成<code>http://host.docker.internal</code>,此时重启容器后访问宿主机成功</p> <p>最终配置如下</p> <div class="language-properties line-numbers-mode"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br></div><pre class="language-properties"><code><span class="token attr-name">server</span> <span class="token attr-value">{</span>
+<span class="token attr-name">  listen</span> <span class="token attr-value">      80;</span>
+<span class="token attr-name">  server_name</span> <span class="token attr-value"> www.leyou.com;</span>
+<span class="token attr-name">  access_log</span> <span class="token attr-value">/app/docker-lnmp/nginx/logs/leyou/access.www.leyou.com.log combined;</span>
+<span class="token attr-name">  error_log</span> <span class="token attr-value">/app/docker-lnmp/nginx/logs/leyou/error.www.leyou.com.log;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-Host $host;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-Server $host;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+<span class="token comment">	#以item开头的请求都代理到8084端口</span>
+<span class="token attr-name">	location</span> <span class="token attr-value">/item {</span>
+<span class="token comment">    # 先找本地，本地有经过静态化处理的页面，默认在nginx目录下的html目录下</span>
+<span class="token attr-name">    root</span> <span class="token attr-value">html;</span>
+<span class="token attr-name">    if</span> <span class="token attr-value">(!-f $request_filename) { #请求的文件不存在，就反向代理</span>
+<span class="token attr-name">      proxy_pass</span> <span class="token attr-value">http://host.docker.internal:8084;</span>
+      break;
+    }
+  }
+<span class="token attr-name">  location</span> <span class="token attr-value">/ {</span>
+<span class="token attr-name">    proxy_pass</span> <span class="token attr-value">http://host.docker.internal:9002;</span>
+<span class="token attr-name">    proxy_connect_timeout</span> <span class="token attr-value">600;</span>
+<span class="token attr-name">    proxy_read_timeout</span> <span class="token attr-value">600;</span>
+  }
+}
+<span class="token attr-name">server</span> <span class="token attr-value">{</span>
+<span class="token attr-name">  listen</span> <span class="token attr-value">      80;  #监听的端口</span>
+<span class="token attr-name">  server_name</span> <span class="token attr-value"> 	manage.leyou.com;	#监听的域名</span>
+<span class="token attr-name">  access_log</span> <span class="token attr-value">/app/docker-lnmp/nginx/logs/leyou/access.manage.leyou.com.log combined;</span>
+<span class="token attr-name">  error_log</span> <span class="token attr-value">/app/docker-lnmp/nginx/logs/leyou/error.manage.leyou.com.log;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-Host $host;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-Server $host;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+<span class="token attr-name">  location</span> <span class="token attr-value">/ {</span>
+<span class="token attr-name">    proxy_pass</span> <span class="token attr-value">http://host.docker.internal:9001;</span>
+<span class="token attr-name">    proxy_connect_timeout</span> <span class="token attr-value">600;</span>
+<span class="token attr-name">    proxy_read_timeout</span> <span class="token attr-value">600;</span>
+<span class="token comment">    #root   html;</span>
+<span class="token comment">    #index  index.html index.htm;</span>
+  }
+<span class="token attr-name">  error_page</span> <span class="token attr-value">  500 502 503 504  /50x.html;</span>
+<span class="token attr-name">  location</span> <span class="token punctuation">=</span> <span class="token attr-value">/50x.html {</span>
+<span class="token attr-name">    root</span> <span class="token attr-value">  html;</span>
+  }
+}
+<span class="token comment">#网关代理，每一个以api.leyou.com域名的请求都会被代理到http://127.0.0.1:10010中去</span>
+<span class="token attr-name">server</span> <span class="token attr-value">{</span>
+<span class="token attr-name">  listen</span> <span class="token attr-value">      80;</span>
+<span class="token attr-name">  server_name</span> <span class="token attr-value"> api.leyou.com;</span>
+<span class="token attr-name">  access_log</span> <span class="token attr-value">/app/docker-lnmp/nginx/logs/leyou/access.api.leyou.com.log combined;</span>
+<span class="token attr-name">  error_log</span> <span class="token attr-value">/app/docker-lnmp/nginx/logs/leyou/error.api.leyou.com.log;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-Host $host;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-Server $host;</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+<span class="token comment">  # 转发时携带请求的自身的host,而不是转发后的host: 127.0.0.1  ,主要是为了将cookie中的内容返回到请求浏览器</span>
+<span class="token attr-name">  proxy_set_header</span> <span class="token attr-value">Host $host;</span>
+<span class="token comment">  # 上传路径的映射，将上传图片的请求不经过网关，将图片保存在其他服务器。以免造成不必要的网络开销</span>
+<span class="token attr-name">  location</span> <span class="token attr-value">/api/upload {</span>
+<span class="token attr-name">    proxy_pass</span> <span class="token attr-value">http://host.docker.internal:8082;</span>
+<span class="token attr-name">    proxy_connect_timeout</span> <span class="token attr-value">600;</span>
+<span class="token attr-name">    proxy_read_timeout</span> <span class="token attr-value">600;</span>
+<span class="token comment">    # nginx对代理的路径进行重写</span>
+<span class="token attr-name">    rewrite</span> <span class="token attr-value">&quot;^/api/(.*)$&quot; /$1 break;</span>
+  }
+<span class="token attr-name">  location</span> <span class="token attr-value">/ {</span>
+<span class="token attr-name">    proxy_pass</span> <span class="token attr-value">http://host.docker.internal:10010;</span>
+<span class="token attr-name">    proxy_connect_timeout</span> <span class="token attr-value">600;</span>
+<span class="token attr-name">    proxy_read_timeout</span> <span class="token attr-value">600;</span>
+  }
+}
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br></div></div></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2020-12-15
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : Invalid Date
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/posts/2020/12/12/jaxb-api.html" class="post-link" data-v-4e23451f>
+      上一篇 : 微服务 registry 无法启动
+    </a> <!----></section></section> <!----></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" data-v-9d847660><img src="/images/common/avatar.jpg" alt="Cumelmell" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      Cumelmell
+    </section> <section class="info-desc" data-v-9d847660>Just Enjoy Coding</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="China" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>China</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          China
+        </span></span></section> <!----> <section data-v-9d847660><a href="mailto:cumelmell@foxmail.com" title="cumelmell@foxmail.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>cumelmell@foxmail.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          cumelmell@foxmail.com
+        </span></a></section></section></div> <!----></div> <!----></aside></div> <footer class="footer" data-v-1375e54c><!----> <!----> <p class="footer-text" data-v-1375e54c>Copyright 2019-present <a href="https://github.com/d1313113" target="_blank">Cumelmell</a> | MIT License</p></footer></div><div class="global-ui"><!----><!----><div class="cat-container" data-v-a13867c0><canvas id="vuepress-cat" width="280" height="250" class="live2d" data-v-a13867c0></canvas></div></div></div>
+    <script src="/assets/js/app.44c7fbf7.js" defer></script><script src="/assets/js/15.101a1bc0.js" defer></script><script src="/assets/js/31.124203a8.js" defer></script>
+  </body>
+</html>
